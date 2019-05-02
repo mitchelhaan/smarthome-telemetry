@@ -8,7 +8,8 @@
 
 ## Implementation Details
 
-- Data format: JSON over MQTT - structure TBD
+- Data format: JSON over MQTT - see [schema.json](schema.json)
 - Collectors: can be written in any language that can upload data points in JSON format via MQTT (Python 3.7)
-- Aggregator: Google Cloud Function that subscribes to the metric topic and sends the data to the database (Python 3.7)
+- MQTT broker: Google Cloud Pub/Sub
+- Aggregator: Google Cloud Function that receives updates from the metric topic and sends the data to the database
 - Database: InfluxDB
