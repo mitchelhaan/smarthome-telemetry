@@ -1,0 +1,5 @@
+-r epsolar_tracer/requirements.txt
+pyjwt~=1.7.1
+paho-mqtt~=1.4.0
+cryptography~=2.6.1
+schedule~=0.6.0

@@ -1,0 +1,17 @@
+[Unit]
+Description=Machinon Collector
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ProtectSystem=full
+User=pi
+WorkingDirectory=/opt/smarthome-telemetry/collectors/machinon
+ExecStartPre=/bin/sh -c "[ -d 'venv' ] || /usr/bin/env python3.7 -m venv venv"
+ExecStartPre=/opt/smarthome-telemetry/collectors/machinon/venv/bin/pip install -r requirements.txt
+ExecStart=/opt/smarthome-telemetry/collectors/machinon/venv/bin/python main.py
+
+[Install]
+WantedBy=multi-user.target
