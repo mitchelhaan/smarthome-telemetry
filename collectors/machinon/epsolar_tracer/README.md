@@ -4,3 +4,5 @@ Written and tested with a ET4415BND, although it should work with any device tha
 
 Common names for this protocol:
 LS-B, VS-B, Tracer-B, Tracer-A, iTracer, eTracer, B-series
+
+Various documents I've used for reference can be found in [docs/](docs/)
