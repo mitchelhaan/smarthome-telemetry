@@ -35,6 +35,11 @@ def _collect_values(client):
         "charging_mode": ChargingMode.parse(
             client.read_register(RealtimeStatus.ChargingEquipmentStatus)
         ).name,
+        "output_current": float(client.read_register(RealtimeData.BatteryCurrent)),
+        "output_power": float(client.read_register(RealtimeData.BatteryPower)),
+        "equipment_temperature": float(
+            client.read_register(RealtimeData.EquipmentTemperature)
+        ),
     }
 
 
